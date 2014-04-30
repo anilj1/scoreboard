@@ -25,7 +25,7 @@ IMP NOTE:
 =========
 I have provided the build script, it should compile on any of the Java compiler you have.
 
-Ideally you will need Java version 1.7 or greater. The reason is I compiled and build it using 1.7. 
+Ideally you will need Java version 1.6 or greater. The reason is I compiled and build it using 1.6. 
 
 Features not implemented & Issues:
 ==================================
