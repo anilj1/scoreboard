@@ -1,0 +1,10 @@
+
+Program:   | E:\\aSpring-2013\\eclipse-ws\\scoreboard\\inputs\\prog1.txt
+# Unit               | Total    | EXEC Cycles 
+FP Adders            | 2        | 2           FP Multipliers       | 2        | 30          FP Dividers          | 1        | 50          Integder Units       | 1        | 1           LOAD/STORE           | --       | 3           BRANCH               | --       | 0           
+
+Instruction          | FETCH  | ISSUE  | READ   | EXEC   | WRITE  | RAW    | WAR    | WAW    | STRUCT
+GG: L.D F1, 4(R4)    | 1      | 2      | 3      | 6      | 7      | N      | N      | N      | N         L.D F2, 8(R5)    | 2      | 8      | 9      | 12     | 13     | N      | N      | N      | Y         ADD.D F4, F6, F2 | 8      | 9      | 14     | 16     | 17     | Y      | N      | N      | N         SUB.D F5, F7, F1 | 9      | 10     | 11     | 13     | 14     | N      | N      | N      | N         MUL.D F6, F1, F5 | 10     | 11     | 15     | 45     | 46     | Y      | N      | N      | N         ADD.D F7, F2, F6 | 11     | 15     | 47     | 49     | 50     | Y      | N      | N      | Y         ADD.D F6, F1, F7 | 16     | 47     | 51     | 53     | 54     | Y      | N      | Y      | Y         DADDI R4, R4, 2  | 48     | 49     | 50     | 51     | 52     | N      | N      | N      | N         DADDI R5, R5, 2  | 49     | 53     | 54     | 55     | 56     | N      | N      | N      | Y         DSUB R1, R1, R2  | 53     | 57     | 58     | 59     | 60     | N      | N      | N      | Y     
+
+# Cache Requests     | Cache Hits  
+10                   | 3           

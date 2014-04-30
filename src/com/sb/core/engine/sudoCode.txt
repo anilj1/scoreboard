@@ -1,0 +1,42 @@
+
+
+	while (there are instruction in queue) {
+		fetch stage {
+			fetch the instruction from the instruction memory;
+			# this is basically inst cache operation;
+			# cache hit/miss to be processed here;
+			pass the instruction to issue stage; 
+		}
+		issue stage {
+			check the type of instruction;
+			determine the required functional unit for inst;
+			check if the required functional unit is available;
+				if not, stall the stage and return;
+			reserve the required functional unit is available;
+			check if destination register is available;
+				if not, stall the stage and return; 
+			reserve the required destination register;
+			pass the instruction to read stage;
+		}
+		read stage {
+			check if source register (operand) is available;
+			# RAW Hazard handling:
+				# availability of source register depends on if the same 
+				# register is marked as a destination register in previous inst
+				# and is locked in issue stage. In this case, the register will 
+				# not be available for reading in read stage.
+				if not, stall the stage and return; 
+			mark the associated register as 'waiting';
+			read the values from the operands;
+			pass the instruction to execute stage; 
+		}
+		execute stage {
+			executes the instruction as per its logic;
+			corresponding function unit is still reserved in this stage;
+			pass the instruction to execute stage; 
+		}
+		write stage {
+			check if the destination register is 'locked' or 'waiting';
+				if the above condition is true, stall the stage and return;
+			aquire the register and write back the result;
+		}

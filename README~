@@ -1,0 +1,46 @@
+==============================================================
+README - Scoar Board Simulator - Anil Jangam [anilj1@umbc.edu]
+==============================================================
+
+SB.jar
+======
+This is a JAVA project, and I have provided source code as well as a ant build.xml script.
+
+Steps to compile and run the program:
+
+0. Make sure you have 'ant' utility installed before you can compile.
+1. Issue 'ant build' command.
+2. Issue 'ant build_jar' command.
+3. Issue the 'simulator.sh' command. 
+   - Please provide the required argument. Program will tell you. 
+4. DO NOT TOUCH OR MODIFY OR REMOVE ANY OF THE FILE YOURSELF.
+
+HOW to RUN:
+===========
+I have provided some sample configuration, input files in 'inputs' folder. You can start with following command.
+
+  './simulator.sh ./inputs/prog1.txt ./inputs/memory.txt ./inputs/reg.txt ./inputs/config.txt result.txt'
+
+IMP NOTE:
+=========
+I have provided the build script, it should compile on any of the Java compiler you have.
+
+Ideally you will need Java version 1.7 or greater. The reason is I compiled and build it using 1.7. 
+
+Features not implemented & Issues:
+==================================
+1. Patial implementation of Branching and Jumps.
+2. Partial implementation of I and D cache.
+3. Consecutive instruction having Structral Hazard gives incorrect cycles 
+   - This is because of my design flaw. 
+   - However, the basic scoreboard will work perfectly.
+
+General
+=======
+1. Please use the simulator.sh file. 
+2. There is no '.bat' file to execute this program on Windowa platform. Please make sure you run it on Linux or Solaris.
+3. Again please make sure you have Java version 1.6 and above. 
+
+Contact:
+========
+Email: anilj@umbc.edu
